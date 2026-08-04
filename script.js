@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initNavigationMenu();
     initOverlays();
+    initProjectGallery();
     initContactPanel();
     initInteractiveHovers();
 });
@@ -91,9 +92,15 @@ const projectsData = [
     {
         id: 0,
         year: "2026",
-        image: "assets/swiss_poster.png", 
-         gallery: [
-        
+        image: "assets/swiss_poster.png",
+        gallery: [
+            { src: "assets/swiss_poster.png" },
+            { src: "assets/poster_01.png" },
+            { src: "assets/poster_02.png" },
+            { src: "assets/poster_03.png" },
+            { src: "assets/poster_04.png" },
+            { src: "assets/poster_05.png" }
+        ],
         en: {
             title: "Brutal Typography",
             category: "BRAND IDENTITY / PRINT",
@@ -109,10 +116,17 @@ const projectsData = [
             description: "Дизайн-система постерів та брендингова кампанія для виставки Swiss Legacy. Побудовано виключно на основі жорстких друкарських сіток, контрастних гротескних шрифтів та швейцарського бруталізму."
         }
     },
+
     {
         id: 1,
         year: "2026",
         image: "assets/crumpled_blue_foil.png",
+        gallery: [
+            { src: "assets/crumpled_blue_foil.png" },
+            { src: "assets/crumpled_blue_foil_NBG.png" },
+            { src: "assets/crumpled_blue_foil_NBG_2.png" },
+            { src: "assets/crumpled_blue_foil copy.png" }
+        ],
         en: {
             title: "Kinetic Systems",
             category: "DIGITAL EXPERIENCE",
@@ -128,10 +142,19 @@ const projectsData = [
             description: "Інтерактивна цифрова інсталяція, що досліджує механіку руху, кінетичні форми літер та плавні інтерфейси слідування за курсором для електронної сцени Берліна."
         }
     },
+
     {
         id: 2,
         year: "2025",
         image: "assets/chrome_sculpture.png",
+          gallery: [
+            { src: "assets/swiss_poster.png" },
+            { src: "assets/poster_01.png" },
+            { src: "assets/poster_02.png" },
+            { src: "assets/poster_03.png" },
+            { src: "assets/poster_04.png" },
+            { src: "assets/poster_05.png" }
+        ],
         en: {
             title: "Generative Chaos",
             category: "WEBGL / INTERACTIVE",
@@ -151,6 +174,14 @@ const projectsData = [
         id: 3,
         year: "2025",
         image: "assets/swiss_poster.png",
+        gallery: [
+            { src: "assets/swiss_poster.png" },
+            { src: "assets/poster_01.png" },
+            { src: "assets/poster_02.png" },
+            { src: "assets/poster_03.png" },
+            { src: "assets/poster_04.png" },
+            { src: "assets/poster_05.png" }
+        ],
         en: {
             title: "Grid & Structure",
             category: "EDITORIAL DESIGN",
@@ -166,10 +197,19 @@ const projectsData = [
             description: "Дизайн макету каталогу з експериментальною редакційною графікою, суворими сітками та геометричними ілюстраціями, що відображають постіндустріальний друк."
         }
     },
+
     {
         id: 4,
         year: "2026",
         image: "assets/chrome_sculpture.png",
+         gallery: [
+            { src: "assets/swiss_poster.png" },
+            { src: "assets/poster_01.png" },
+            { src: "assets/poster_02.png" },
+            { src: "assets/poster_03.png" },
+            { src: "assets/poster_04.png" },
+            { src: "assets/poster_05.png" }
+        ],
         en: {
             title: "Chrome Aesthetics",
             category: "3D / GRAPHICS",
@@ -185,10 +225,19 @@ const projectsData = [
             description: "Розробка гіперреалістичних віртуальних об'єктів, рідких хромованих текстур та симуляцій переливчастого скла для промо-матеріалів та постерних кампаній."
         }
     },
+
     {
         id: 5,
         year: "2025",
         image: "assets/crumpled_blue_foil.png",
+        gallery: [
+            { src: "assets/swiss_poster.png" },
+            { src: "assets/poster_01.png" },
+            { src: "assets/poster_02.png" },
+            { src: "assets/poster_03.png" },
+            { src: "assets/poster_04.png" },
+            { src: "assets/poster_05.png" }
+        ],
         en: {
             title: "Volumetric Shapes",
             category: "VISUAL IDENTITY",
@@ -689,12 +738,45 @@ function openProjectModal(id) {
     document.getElementById('modal-param-year').innerText = project.year;
     document.getElementById('modal-param-category').innerText = project[currentLanguage].category;
     
-    document.getElementById('modal-project-img').src = project.image;
-    
+    // Prefer webp srcset if manifest is available, otherwise set original src
+    const modalImgWrapper = document.querySelector('.modal-img-wrapper');
+    if (modalImgWrapper) {
+        fetch('assets/generated-webp/srcsets.json').then(r => r.json()).catch(() => null).then(manifest => {
+            const src = project.image || '';
+            const basename = src.split('/').pop();
+            const entry = manifest && manifest[basename];
+            if (entry && Array.isArray(entry.srcset) && entry.srcset.length) {
+                // build picture element
+                modalImgWrapper.innerHTML = '';
+                const picture = document.createElement('picture');
+                const source = document.createElement('source');
+                source.type = 'image/webp';
+                source.srcset = entry.srcset.join(', ');
+                source.sizes = '(max-width: 1024px) 100vw, 580px';
+                picture.appendChild(source);
+
+                const img = document.createElement('img');
+                img.id = 'modal-project-img';
+                img.className = 'modal-main-img';
+                img.alt = project[currentLanguage]?.title || project.en.title;
+                img.src = entry.generated && entry.generated.length ? entry.generated[entry.generated.length-1] : src;
+                picture.appendChild(img);
+
+                modalImgWrapper.appendChild(picture);
+            } else {
+                // fallback to original single image
+                const imgEl = document.getElementById('modal-project-img');
+                if (imgEl) imgEl.src = project.image;
+            }
+        });
+    }
+
     modal.classList.add('active');
+    // Build gallery (thumbnails, lazy loading, lightbox)
+    buildGalleryForProject(project);
+    // Build vertical stacked high-res images (3-5) under the main visual
+    buildStackedImages(project);
     
-    // Log active project view
-    document.body.classList.add('clickable-hover');
 }
 
 function initOverlays() {
@@ -757,6 +839,101 @@ function initOverlays() {
         perspectivesOverlay?.classList.remove('active');
     });
 }
+
+/* ----------------------------------------------------
+   X. PROJECT GALLERY, LAZY LOAD, LIGHTBOX
+---------------------------------------------------- */
+function initProjectGallery() {
+    const modal = document.getElementById('project-modal');
+    if (!modal) return;
+    const visualsCol = modal.querySelector('.modal-visuals-col');
+    if (!visualsCol) return;
+
+    // If the gallery scaffolding is already present, do nothing — buildGalleryForProject runs on modal open
+    if (!visualsCol.querySelector('.project-gallery')) return;
+}
+
+function buildGalleryForProject(project) {
+    const modal = document.getElementById('project-modal');
+    if (!modal) return;
+    const thumbnails = modal.querySelector('.thumbnails');
+    const viewport = modal.querySelector('.gallery-viewport');
+    if (!thumbnails || !viewport) return;
+
+    thumbnails.innerHTML = ''; // clear previous
+
+    const items = project.gallery && project.gallery.length ? project.gallery : [{ src: project.image, caption: project[currentLanguage]?.title || '' }];
+
+    // If only the main image exists, avoid duplicating it in the thumbnails stack
+    if (items.length === 1) {
+        thumbnails.innerHTML = '';
+    } else {
+        items.forEach((it, idx) => {
+            const figure = document.createElement('figure');
+            figure.className = 'thumb-figure';
+            figure.setAttribute('data-index', idx);
+            figure.setAttribute('aria-label', (it.caption || `Image ${idx+1}`));
+
+            // Use a picture/img for responsive and lazy loading; data-src used for lazy loader
+            figure.innerHTML = `
+                <picture>
+                    <img data-src="${it.src}" alt="${(it.caption || project[currentLanguage]?.title || '')}" loading="lazy" class="thumb-img vertical-img">
+                </picture>
+            `;
+
+            thumbnails.appendChild(figure);
+        });
+    }
+
+    // Log how many images are available for this project
+    const stackedCount = items.length;
+    console.info(`Project ${project.id} gallery images: ${stackedCount}`);
+
+    setupLazyLoading(modal);
+
+    // Reveal animation for vertical thumbnails
+    const thumbObserver = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { root: null, rootMargin: '0px 0px -80px 0px', threshold: 0.02 }) : null;
+    thumbnails.querySelectorAll('figure, .thumb-btn').forEach(el => { if (thumbObserver) thumbObserver.observe(el); });
+
+}
+
+function setupLazyLoading(root, options = {}) {
+    const imgs = root.querySelectorAll('img[data-src]');
+    const rootEl = options.rootEl || root.querySelector('.gallery-viewport') || null;
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                    img.classList.add('loaded');
+                    obs.unobserve(img);
+                }
+            });
+        }, { root: rootEl, rootMargin: options.rootMargin || '200px', threshold: options.threshold || 0.01 });
+        imgs.forEach(i => io.observe(i));
+    } else {
+        imgs.forEach(img => { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); img.classList.add('loaded'); });
+    }
+}
+
+// Stacked vertical images (3-5) below main visual — disabled to avoid duplicate gallery
+function buildStackedImages(project) {
+    const container = document.getElementById('stacked-images');
+    if (!container) return;
+    // Clear out stacked-images; primary vertical gallery is served by the main project gallery (.thumbnails)
+    container.innerHTML = '';
+    container.style.display = 'none';
+}
+
 
 /* ----------------------------------------------------
    6. 3D PARALLAX TILT EFFECT

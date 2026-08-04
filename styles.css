@@ -25,6 +25,9 @@
     /* Cursor */
     --cursor-size: 40px;
     --cursor-dot-size: 6px;
+
+    /* Gallery spacing */
+    --gallery-gap: 40px; /* desktop default */
 }
 
 [data-theme="dark"] {
@@ -50,12 +53,13 @@
 
 html, body {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: auto;
+    overflow-y: auto; /* enable page scrolling */
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-sans);
     transition: background-color 0.8s cubic-bezier(0.85, 0, 0.15, 1), color 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+    scroll-behavior: smooth;
 }
 
 ::selection {
@@ -1025,6 +1029,14 @@ body:hover #custom-cursor-dot {
     .form-group textarea {
         cursor: auto;
     }
+
+    /* Stack param rows on small screens so values don't overlap */
+    .param-row {
+        grid-template-columns: 1fr; /* label above value */
+    }
+    .param-label {
+        margin-bottom: 0.25rem;
+    }
 }
 
 /* ----------------------------------------------------
@@ -1101,7 +1113,7 @@ body:hover #custom-cursor-dot {
     display: flex;
     flex-direction: column;
     padding: 4vh 4vw;
-    overflow: hidden;
+overflow-y: auto; /* enable scrolling inside modal */
 }
 
 .project-modal.active {
@@ -1162,17 +1174,20 @@ body:hover #custom-cursor-dot {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 4vw;
-    overflow: hidden;
+    overflow: visible; /* allow modal content to expand and enable parent scrolling */
     padding-bottom: 2vh;
+    align-items: start; /* ensure left column (details) aligns to top */
 }
 
 .modal-details-col {
     grid-column: 1 / 6;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    overflow-y: auto;
-    padding-right: 2vw;
+   justify-content: flex-start; /* align content to the top */
+   align-items: flex-start; /* ensure children start at left */
+   overflow: visible; /* allow details to flow with page scroll */
+   padding-right: 2vw;
+   padding-top: 0;
 }
 
 /* Hide scrollbar for layout cleanliness */
@@ -1206,11 +1221,20 @@ body:hover #custom-cursor-dot {
 }
 
 .param-row {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 120px 1fr; /* fixed label column, flexible value column */
+    gap: 1rem;
+    align-items: start;
     font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: 0.05em;
+}
+
+.param-value {
+    font-weight: 500;
+    white-space: normal; /* allow wrapping */
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .param-label {
@@ -1225,15 +1249,17 @@ body:hover #custom-cursor-dot {
 .modal-visuals-col {
     grid-column: 6 / 13;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* center gallery and modal image horizontally */
+    height: auto;
+    overflow: visible; /* allow visuals column to grow and be scrollable by page */
 }
 
 .modal-img-wrapper {
     width: 100%;
-    max-width: 580px;
-    height: 80%;
+    max-width: 720px; /* match gallery width */
+    height: auto;
     overflow: hidden;
     background-color: var(--grid-color);
     border: 1px solid var(--grid-color);
@@ -1242,6 +1268,7 @@ body:hover #custom-cursor-dot {
     align-items: center;
     transition: border-color 0.8s, background-color 0.8s;
     position: relative;
+    margin-bottom: var(--gallery-gap); /* equal spacing between main image and gallery */
 }
 
 .modal-img-wrapper img {
@@ -1252,7 +1279,263 @@ body:hover #custom-cursor-dot {
 }
 
 .modal-img-wrapper:hover img {
-    transform: scale(1.04);
+    transform: none; /* disable modal image hover zoom */
+}
+
+/* Project gallery: thumbnails, lazy load, lightbox */
+.project-gallery {
+    width: 100%;
+    max-width: 720px; /* unify gallery width */
+    margin: 2rem auto 0 auto; /* centered vertical column */
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.modal-img-wrapper {
+    max-width: 720px; /* match gallery width for alignment */
+    margin: 0 auto;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.gallery-filters {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid var(--grid-color);
+    padding: 6px 10px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.filter-btn.active {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.gallery-viewport {
+    width: 100%;
+    height: auto; /* flow naturally with page content */
+    overflow: visible;
+    scroll-behavior: smooth;
+    padding-bottom: 0;
+}
+
+.thumbnails {
+    display: block; /* strict vertical flow */
+    padding: 0;
+}
+
+.thumbnails > figure {
+    width: 100%;
+    max-width: 720px; /* constrain each figure to gallery width */
+    margin: 0 auto var(--gallery-gap) auto; /* center each figure horizontally */
+    display: block;
+}
+
+/* Initial hidden state for reveal animation */
+.thumbnails > figure, .thumbnails > .thumb-btn {
+    transform: translateY(12px);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.6s;
+    scroll-snap-align: start;
+    width: 100%;
+    display: block;
+}
+
+/* Figures flow normally in a vertical column with consistent spacing */
+.thumbnails > figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.reveal {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+/* Each thumbnail now becomes a full-width block inside the gallery container */
+.thumb-btn, .thumb-figure {
+    background: none;
+    border: none;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    cursor: default; /* remove pointer cursor on gallery items */
+    padding: 0;
+}
+
+.thumb-img, .thumb-figure img, .vertical-img {
+    width: 100%;
+    height: auto; /* preserve aspect ratio */
+    object-fit: contain;
+    display: block;
+    border: 1px solid var(--grid-color);
+    transition: none; /* no hover transform */
+}
+
+.thumb-btn:hover .thumb-img,
+.thumb-figure:hover img,
+.vertical-img:hover {
+    transform: none; /* disable hover zoom */
+    box-shadow: none; /* remove hover shadow */
+    cursor: default; /* disable pointer cursor on images */
+}
+
+.thumb-caption, .thumb-figure figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+@media (max-width: 1024px) {
+    --gallery-gap: 32px;
+    .thumbnails { gap: 32px; }
+}
+
+@media (max-width: 768px) {
+    --gallery-gap: 24px;
+    .thumbnails { gap: 24px; }
+    .thumb-caption, .thumb-figure figcaption { font-size: 0.78rem; }
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.75);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+    z-index: 2000;
+    padding: 4vh 4vw;
+}
+
+.lightbox.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-inner {
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    touch-action: pan-y pinch-zoom;
+}
+
+.lightbox-img.zoomed {
+    transform: scale(2);
+}
+
+.lightbox-caption {
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    opacity: 0.95;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    right: 0.2rem;
+    top: -2.4rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+.lightbox-zoom {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+    .gallery-viewport { height: 160px; }
+    .thumb-btn { width: 120px; flex: 0 0 120px; }
+    .thumb-img { height: 90px; }
+}
+
+/* Stacked vertical images */
+.stacked-images {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    scroll-behavior: smooth; /* smooth scroll behavior for anchor links */
+}
+
+.stacked-figure {
+    display: block;
+    margin: 0;
+    border: 1px solid var(--grid-color);
+    overflow: hidden;
+    background: var(--grid-color);
+    transform: translateY(12px);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.6s;
+}
+
+.stacked-figure.reveal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.stacked-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.stacked-caption {
+    padding: 0.6rem 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Reveal state for lazy-loaded images */
+img.loaded + .stacked-caption, img.loaded {
+    /* ensures caption/readability once image loads */
+}
+
+@media (max-width: 768px) {
+    .stacked-images { gap: 1rem; }
 }
 
 /* ----------------------------------------------------

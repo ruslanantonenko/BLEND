@@ -343,9 +343,23 @@
             </div>
             <!-- Right Column: Visual Showcase -->
             <div class="modal-visuals-col">
-                <div class="modal-img-wrapper">
+                <div class="modal-img-wrapper" aria-hidden="true">
                     <img id="modal-project-img" src="" alt="Project Detail Mockup">
                 </div>
+
+                <!-- Project Gallery: thumbnails, lazy loading, filters -->
+                <div class="project-gallery">
+
+                    <div class="gallery-viewport" tabindex="0" aria-label="Project images">
+                        <div class="thumbnails" role="list"></div>
+                    </div>
+                </div>
+
+                <!-- Vertical stacked high-res images (3–5) -->
+                <div class="stacked-images" id="stacked-images" aria-label="Additional project images">
+                    <!-- Populated dynamically: up to 5 high-resolution images in a vertical stack -->
+                </div>
+
             </div>
         </div>
     </div>
