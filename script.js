@@ -93,27 +93,7 @@ const projectsData = [
         year: "2026",
         image: "assets/swiss_poster.png", 
          gallery: [
-        {
-            src: "assets/poster_01.jpg",
-            span: "large"
-        },
-        {
-            src: "assets/poster_02.jpg",
-            span: "small"
-        },
-        {
-            src: "assets/poster_03.jpg",
-            span: "wide"
-        },
-        {
-            src: "assets/poster_04.jpg",
-            span: "tall"
-        },
-        {
-            src: "assets/poster_05.jpg",
-            span: "small"
-        }
-    ],
+        
         en: {
             title: "Brutal Typography",
             category: "BRAND IDENTITY / PRINT",
