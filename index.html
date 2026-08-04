@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ruslan Antonenko — Graphic Designer & Art Director based in Kyiv. Creating brand systems, digital experiences, and visual chaos.">
+    <title>Ruslan Antonenko — Architect/Designer/Urban planner</title>
+    <!-- Google Fonts: Inter for branding/headers, JetBrains Mono for technical metadata -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="custom-cursor-dot"></div>
+
+    <!-- Background Grid Lines -->
+    <div class="grid-container">
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+    </div>
+
+    <!-- Interactive Canvas for Floating Dots and Connections -->
+    <canvas id="physics-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-logo" id="logo">R/A</div>
+        
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+        
+        <div class="header-right">
+            <!-- Language Switcher -->
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <span class="lang-separator">/</span>
+                <button class="lang-btn" data-lang="ua">UA</button>
+            </div>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
+                <span class="menu-text" data-i18n="menu">MENU</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Hero Text Column -->
+        <div class="hero-text-section">
+            <h1 class="hero-name">
+                <span class="word-wrapper"><span class="char-span">R</span><span class="char-span">u</span><span class="char-span">s</span><span class="char-span">l</span><span class="char-span">a</span><span class="char-span">n</span></span><br>
+                <span class="word-wrapper"><span class="char-span">A</span><span class="char-span">n</span><span class="char-span">t</span><span class="char-span">o</span><span class="char-span">n</span><span class="char-span">e</span><span class="char-span">n</span><span class="char-span">k</span><span class="char-span">o</span></span>
+            </h1>
+            
+            <div class="metadata-row">
+                <div class="meta-item">
+                    <span class="meta-label" data-i18n="role-label">ROLE</span>
+                    <span class="meta-value" data-i18n="role-value">ARCHITECT-DESIGNER-URBAN PLANNER</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label" data-i18n="based-label">BASED</span>
+                    <span class="meta-value" data-i18n="based-value">KYIV</span>
+                </div>
+                <div class="meta-item copyable" id="email-copy" data-email="hello@ruslanantonenko.com">
+                    <span class="meta-label" data-i18n="email-label">EMAIL</span>
+                    <span class="meta-value link-style">R.ANTONENKO@HOTMAIL.COM</span>
+                    <span class="tooltip" data-i18n="email-tooltip">Click to copy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Parallax Crumpled Blue Foil Area -->
+        <div class="visual-wrapper">
+            <div class="parallax-container" id="parallax-container">
+                <img id="crumpled-foil" src="assets/crumpled_blue_foil_NBG.png" alt="3D Crumpled Blue Foil Graphic Design Art Element" class="crumpled-foil-img">
+                <div class="glow-shadow"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Action -->
+    <footer class="footer">
+        <button class="start-project-btn" id="start-project-btn">
+            <span data-i18n="start-project">START A PROJECT</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
+    </footer>
+
+    <!-- Full-screen Navigation Overlay Menu -->
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu-header">
+            <div class="header-logo white-logo">R/A</div>
+            <button class="menu-close" id="menu-close" aria-label="Close Menu">
+                <span class="menu-text" data-i18n="close">CLOSE</span>
+            </button>
+        </div>
+        <div class="menu-content">
+            <nav class="menu-nav">
+                <a href="#" class="menu-link" id="menu-link-index" data-index="01"><span class="link-num">01/</span> <span data-i18n="menu-index">INDEX</span></a>
+                <a href="#" class="menu-link" id="menu-link-works" data-index="02"><span class="link-num">02/</span> <span data-i18n="menu-works">SELECTED WORKS</span></a>
+                <a href="#" class="menu-link" id="menu-link-perspectives" data-index="03"><span class="link-num">03/</span> <span data-i18n="menu-perspectives">PERSPECTIVES</span></a>
+                <a href="#" class="menu-link" id="menu-link-contact" data-index="04"><span class="link-num">04/</span> <span data-i18n="menu-contact">CONTACT</span></a>
+            </nav>
+            <div class="menu-footer">
+                <div class="menu-footer-col">
+                    <span class="menu-meta-label" data-i18n="menu-social">SOCIAL</span>
+                    <a href="https://www.instagram.com/ruslan_antonenko_/" target="_blank" rel="noopener" class="menu-meta-link">INSTAGRAM</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="menu-meta-link">LINKEDIN</a>
+                    <a href="https://www.behance.net/rusarchite185d" target="_blank" rel="noopener" class="menu-meta-link">BEHANCE</a>
+                </div>
+                <div class="menu-footer-col">
+                    <span class="menu-meta-label" data-i18n="menu-time">LOCAL TIME</span>
+                    <span class="menu-meta-value" id="local-time">KYIV 12:00:00 AM</span>
+                </div>
+                <div class="menu-footer-col">
+                    <span class="menu-meta-label" data-i18n="menu-design-code">DESIGN & CODE</span>
+                    <span class="menu-meta-value">© 2026 RUSLAN ANTONENKO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-screen Selected Works Overlay -->
+    <div class="content-overlay" id="selected-works-overlay">
+        <div class="overlay-header">
+            <div class="overlay-title" data-i18n="overlay-works-title">SELECTED WORKS</div>
+            <button class="overlay-close" id="selected-works-close" aria-label="Close Selected Works">
+                <span class="close-text" data-i18n="close">CLOSE</span>
+            </button>
+        </div>
+        <div class="overlay-body">
+            <div class="works-grid">
+                <div class="work-item" data-project-id="0">
+                    <span class="work-num">01/</span>
+                    <div class="work-info">
+                        <h4 class="work-title" data-project-title-id="0">BRUTAL TYPOGRAPHY</h4>
+                        <span class="work-category" data-project-cat-id="0">BRAND IDENTITY / PRINT</span>
+                    </div>
+                    <span class="work-year">2026</span>
+                </div>
+                <div class="work-item" data-project-id="1">
+                    <span class="work-num">02/</span>
+                    <div class="work-info">
+                        <h4 class="work-title" data-project-title-id="1">KINETIC SYSTEMS</h4>
+                        <span class="work-category" data-project-cat-id="1">DIGITAL EXPERIENCE</span>
+                    </div>
+                    <span class="work-year">2026</span>
+                </div>
+                <div class="work-item" data-project-id="2">
+                    <span class="work-num">03/</span>
+                    <div class="work-info">
+                        <h4 class="work-title" data-project-title-id="2">GENERATIVE CHAOS</h4>
+                        <span class="work-category" data-project-cat-id="2">WEBGL / INTERACTIVE</span>
+                    </div>
+                    <span class="work-year">2025</span>
+                </div>
+                <div class="work-item" data-project-id="3">
+                    <span class="work-num">04/</span>
+                    <div class="work-info">
+                        <h4 class="work-title" data-project-title-id="3">GRID & STRUCTURE</h4>
+                        <span class="work-category" data-project-cat-id="3">EDITORIAL DESIGN</span>
+                    </div>
+                    <span class="work-year">2025</span>
+                </div>
+                <div class="work-item" data-project-id="4">
+                    <span class="work-num">05/</span>
+                    <div class="work-info">
+                        <h4 class="work-title" data-project-title-id="4">CHROME AESTHETICS</h4>
+                        <span class="work-category" data-project-cat-id="4">3D / GRAPHICS</span>
+                    </div>
+                    <span class="work-year">2026</span>
+                </div>
+                <div class="work-item" data-project-id="5">
+                    <span class="work-num">06/</span>
+                    <div class="work-info">
+                        <h4 class="work-title" data-project-title-id="5">VOLUMETRIC SHAPES</h4>
+                        <span class="work-category" data-project-cat-id="5">VISUAL IDENTITY</span>
+                    </div>
+                    <span class="work-year">2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-screen Perspectives Overlay -->
+    <div class="content-overlay" id="perspectives-overlay">
+        <div class="overlay-header">
+            <div class="overlay-title" data-i18n="overlay-perspectives-title">PERSPECTIVES</div>
+            <button class="overlay-close" id="perspectives-close" aria-label="Close Perspectives">
+                <span class="close-text" data-i18n="close">CLOSE</span>
+            </button>
+        </div>
+        <div class="overlay-body">
+            <div class="perspectives-list">
+                <article class="perspective-post" data-post-id="0">
+                    <div class="post-meta">
+                        <span class="post-date" data-post-date-id="0">OCTOBER 2026</span>
+                        <span class="post-read-time" data-post-read-id="0">5 MIN READ</span>
+                    </div>
+                    <h3 class="post-title" data-post-title-id="0">THE RESURGENCE OF SWISS BRUTALISM IN DIGITAL PLATFORMS</h3>
+                    <p class="post-excerpt" data-post-excerpt-id="0">How high-contrast grotesque typefaces, geometric grids, and unyielding layouts are redefining the user experience in a sea of homogenized SaaS designs.</p>
+                    <a href="#" class="post-read-link" data-post-link-id="0">READ ESSAY →</a>
+                </article>
+                <article class="perspective-post" data-post-id="1">
+                    <div class="post-meta">
+                        <span class="post-date" data-post-date-id="1">JUNE 2026</span>
+                        <span class="post-read-time" data-post-read-id="1">7 MIN READ</span>
+                    </div>
+                    <h3 class="post-title" data-post-title-id="1">CHAOS AS A STRUCTURAL DESIGN PARADIGM</h3>
+                    <p class="post-excerpt" data-post-excerpt-id="1">Exploring the tension between rigid grid systems and mathematical distortion. Why breaking the rules yields more memorable visual identity systems.</p>
+                    <a href="#" class="post-read-link" data-post-link-id="1">READ ESSAY →</a>
+                </article>
+                <article class="perspective-post" data-post-id="2">
+                    <div class="post-meta">
+                        <span class="post-date" data-post-date-id="2">MARCH 2026</span>
+                        <span class="post-read-time" data-post-read-id="2">4 MIN READ</span>
+                    </div>
+                    <h3 class="post-title" data-post-title-id="2">WEBGL & THE PHYSICALITY OF DIGITIZED GRAPHICS</h3>
+                    <p class="post-excerpt" data-post-excerpt-id="2">A deep-dive into mimicking physical foil, metallic reflections, and natural lighting offsets programmatically inside a standard viewport.</p>
+                    <a href="#" class="post-read-link" data-post-link-id="2">READ ESSAY →</a>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Panel Slide-out -->
+    <div class="contact-panel" id="contact-panel">
+        <div class="panel-header">
+            <h3 data-i18n="start-project">START A PROJECT</h3>
+            <button class="panel-close" id="panel-close" aria-label="Close Panel">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <form class="contact-form" id="contact-form" action="#" method="POST">
+            <div class="form-group">
+                <input type="text" id="form-name" required placeholder=" " autocomplete="name">
+                <label for="form-name" data-i18n="form-name">NAME</label>
+                <span class="line-border"></span>
+            </div>
+            <div class="form-group">
+                <input type="email" id="form-email" required placeholder=" " autocomplete="email">
+                <label for="form-email" data-i18n="form-email">EMAIL ADDRESS</label>
+                <span class="line-border"></span>
+            </div>
+            <div class="form-group">
+                <textarea id="form-project" required placeholder=" " rows="4"></textarea>
+                <label for="form-project" data-i18n="form-project">PROJECT BRIEF</label>
+                <span class="line-border"></span>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <span data-i18n="form-submit">SEND INQUIRY</span>
+                <svg class="send-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </form>
+        <div class="form-success-message" id="form-success-message">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <p data-i18n="form-success">Thank you! Your project brief has been sent. I will get back to you shortly.</p>
+        </div>
+    </div>
+
+    <!-- Floating Project Preview Card -->
+    <div id="floating-project-preview" class="floating-preview">
+        <div class="preview-img-container">
+            <img id="preview-img" src="" alt="Project Preview">
+        </div>
+        <div class="preview-details">
+            <span class="preview-num" id="preview-num">01/</span>
+            <span class="preview-title" id="preview-title">PROJECT TITLE</span>
+        </div>
+    </div>
+
+    <!-- Full-screen Project Details Modal -->
+    <div class="project-modal" id="project-modal">
+        <div class="modal-header">
+            <div class="modal-project-idx" id="modal-project-idx">01 / 08</div>
+            <button class="modal-close" id="modal-close" aria-label="Close Project">
+                <span class="close-text" data-i18n="close">CLOSE</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Left Column: Details -->
+            <div class="modal-details-col">
+                <h2 class="modal-project-title" id="modal-project-title">PROJECT TITLE</h2>
+                <p class="modal-project-desc" id="modal-project-desc">Project details and description.</p>
+                
+                <div class="project-params-list">
+                    <div class="param-row">
+                        <span class="param-label" data-i18n="param-client">CLIENT</span>
+                        <span class="param-value" id="modal-param-client">CLIENT</span>
+                    </div>
+                    <div class="param-row">
+                        <span class="param-label" data-i18n="param-services">SERVICES</span>
+                        <span class="param-value" id="modal-param-services">SERVICES</span>
+                    </div>
+                    <div class="param-row">
+                        <span class="param-label" data-i18n="param-year">YEAR</span>
+                        <span class="param-value" id="modal-param-year">YEAR</span>
+                    </div>
+                    <div class="param-row">
+                        <span class="param-label" data-i18n="param-category">CATEGORY</span>
+                        <span class="param-value" id="modal-param-category">CATEGORY</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Visual Showcase -->
+            <div class="modal-visuals-col">
+                <div class="modal-img-wrapper">
+                    <img id="modal-project-img" src="" alt="Project Detail Mockup">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-backdrop" id="panel-backdrop"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
