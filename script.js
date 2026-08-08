@@ -92,13 +92,13 @@ const projectsData = [
     {
         id: 0,
         year: "2026",
-        image: "assets/chair_main.png",
+        image: "assets/chair_01.png",
         gallery: [
-            { src: "assets/chair_01.png" },
             { src: "assets/chair_02.png" },
             { src: "assets/chair_03.png" },
             { src: "assets/chair_04.png" },
-
+            { src: "assets/chair_05.png" },
+            { src: "assets/chair_06.png" },
         ],
         en: {
             title: "Brutal Typography",
