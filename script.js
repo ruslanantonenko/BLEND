@@ -213,8 +213,7 @@ const projectsData = [
             { src: "assets/truskavets_06.png" },
             { src: "assets/truskavets_07.png" },
             { src: "assets/truskavets_08.png" },
-            { src: "assets/truskavets_09.png" },
-            { src: "assets/truskavets_10.png" }
+            { src: "assets/truskavets_09.png" }
         ],
         en: {
             title: "Chrome Aesthetics",
