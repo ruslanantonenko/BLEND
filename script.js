@@ -158,18 +158,18 @@ const projectsData = [
             { src: "assets/amsterdam_08.png" }
         ],
         en: {
-            title: "Generative Chaos",
-            category: "WEBGL / INTERACTIVE",
-            client: "Voxel Design Studio",
-            services: "3D Art, Math Algorithms, Shaders",
-            description: "Exploring mathematical transformations and liquid metal shader distortions inside the canvas, mimicking organic chrome foils and volumetric physics."
+            title: "Teremky Amsterdam",
+            category: "ARCHITECTURE",
+            client: "ALL RIGHT DEVELOPMENT",
+            services: "Concept, Architecture, Visualisation",
+            description: "This project was my first independent work with the Kyiv-based developer ALL RIGHT, shortly before the full-scale invasion of Ukraine by russia in 2022. \n\n The site was relatively constrained, but its location near Teremky metro station offered strong potential. The main idea was to create a new identity for this semi-residential area and give it a distinct character.n\nThe project was inspired by the theme of travel, with Amsterdam, the Netherlands, chosen as its destination and conceptual reference. n\n As the area lacks shopping and recreational functions, the ground floor along the main road was designed to accommodate public and commercial uses.n\nThe facades facing neighbouring buildings and green areas are dedicated to residential functions, with private gardens providing a more secluded and intimate living environment."
         },
         ua: {
-            title: "Генеративний хаос",
-            category: "WEBGL / ІНТЕРАКТИВ",
-            client: "Дизайн-студія Воксель",
-            services: "3D-арт, Математичні алгоритми, Шейдери",
-            description: "Дослідження математичних трансформацій та деформацій рідкого металу за допомогою шейдерів на полотні, відтворюючи хромовану фольгу та об'ємну фізику."
+            title: "Теремківський Амстердам",
+            category: "АРХІТЕКТУРА",
+            client: "ALL RIGHT DEVELOPMENT",
+            services: "3Концепція, Архітектура, Візуалізація",
+            description: "Цей проєкт був моєю першою самостійною роботою з київським девелопером ALL RIGHT, виконаною незадовго до повномасштабного вторгнення росії в Україну у 2022 році.n\n Ділянка була відносно обмеженою, проте її розташування поблизу станції метро «Теремки» мало значний потенціал. Основною ідеєю було створити нову ідентичність для цієї напів житлової території та надати їй виразного характеру. n\n Проєкт був натхненний темою подорожей, а Амстердам, Нідерланди, був обраний як напрямок і концептуальний референс. n\n Оскільки району бракує торговельних і рекреаційних функцій, перший поверх уздовж основної дороги було запропоновано відвести під громадські та комерційні функції. n\n Фасади, орієнтовані на сусідні будівлі та зелені зони, відведені під житлову функцію, із приватними садами, що створюють більш відокремлене та камерне середовище для мешканців."
         }
     },
     {
