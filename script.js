@@ -95,7 +95,7 @@ const projectsData = [
         image: "assets/chair_main.png",
         gallery: [
             { src: "assets/chair_main.png" },
-            { src: "assets/poster_01.png" },
+            { src: "assets/chair_main.png" },
             { src: "assets/poster_02.png" },
             { src: "assets/poster_03.png" },
             { src: "assets/poster_04.png" },
