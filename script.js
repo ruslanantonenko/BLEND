@@ -190,14 +190,14 @@ const projectsData = [
             category: "ARCHITECTURE & DESIGN",
             client: "ALL RIGHT DEVELOPMENT",
             services: "Concept, Architecture, Design, Visualisation",
-            description: "A catalog layout design presenting experimental editorial graphics, strict baseline structures, and geometric illustrations reflecting post-industrial print layout constraints."
+            description: "Project 7 Avenue is a unique co-living concept in the heart of Kyiv. Located behind the Vernadsky Library, the residence occupies a quiet area while remaining close to the city centre. \n\n The project features a private swimming pool, a coworking space in the basement, and recreational functions on the top floor, offering panoramic views towards the city centre. Each apartment has its own private loggia, providing residents with an additional outdoor space."
         },
         ua: {
             title: "7 АВЕНЮ",
             category: "АРХІТЕКТУРА ТА ДИЗАЙН",
             client: "ALL RIGHT DEVELOPMENT",
             services: "Концепція, Архітектура, Дизайн, Візуалізація",
-            description: "Дизайн макету каталогу з експериментальною редакційною графікою, суворими сітками та геометричними ілюстраціями, що відображають постіндустріальний друк."
+            description: "Проєкт 7 Avenue, унікальна концепція колівінгу в самому серці Києва. Розташований позаду бібліотеки Вернадського, комплекс знаходиться у тихій частині міста, водночас залишаючись близько до центру. \n\n Проєкт передбачає приватний басейн, коворкінг у цокольному поверсі та рекреаційні функції на верхньому поверсі з панорамними видами на центр міста. Кожна квартира має власну приватну лоджію, що створює додатковий відкритий простір для мешканців."
         }
     },
 
@@ -217,17 +217,17 @@ const projectsData = [
         ],
         en: {
             title: "Chrome Aesthetics",
-            category: "3D / GRAPHICS",
-            client: "Meta-Format Art Group",
-            services: "3D Rendering, Visual Identity",
-            description: "Developing hyper-realistic virtual assets, liquid chrome textures, and iridescent glass simulations used across digital promotional assets and poster campaigns."
+            category: "URBAN CONCEPT",
+            client: "UN HABITAT, RO3KVIT",
+            services: "Supervision, urban development, Participation, Interviewing",
+            description: "Supported by: the Federal Ministry for Economic Cooperation and Development of Germany (BMZ), UN-Habitat, and NGO Ro3kvit. \n\n Team: Truskavets City Council, UN-Habitat Ukraine, and NGO Ro3kvit.\n\n Acknowledgements: Charitable Foundation Voices of Children, NGO Association of People with Disabilities, NGO Kebeta, the House of Student Creativity, University of the Third Age, the Truskavets IDP Council, the principal of School No. 2, and heads of condominium associations for their participation and valuable input. \n\n The conclusions and recommendations presented in this report do not necessarily reflect the official position of UN-Habitat, its Governing Council, or its Member States. The designations and presentation of materials do not imply any position by the United Nations regarding the legal status of territories, boundaries, or authorities.\n\n Urban acupuncture is a targeted intervention that can trigger broader positive changes across a neighbourhood. \n\n In this project, the key “pain point” is the abandoned former boiler house, which has the potential to become a catalyst for development and improved quality of life throughout the neighbourhood. \n\n On 11 October 2025, a participatory workshop with local residents was held in Truskavets. Its aim was to identify key challenges, everyday needs, and priorities for future spatial interventions. Participants from different age and social groups worked with neighbourhood maps, identifying problematic and unsafe areas, desired routes, green spaces, and potential points for development.\n\n The collected input formed the basis for the spatial concept and further development scenarios, grounded in the real needs and priorities of the community."
         },
         ua: {
-            title: "Естетика хрому",
-            category: "3D / ГРАФІКА",
-            client: "Арт-група Мета-Формат",
-            services: "3D рендеринг, Візуальна айдентика",
-            description: "Розробка гіперреалістичних віртуальних об'єктів, рідких хромованих текстур та симуляцій переливчастого скла для промо-матеріалів та постерних кампаній."
+            title: "Концепція розвитку сусідства м. Трускавец",
+            category: "УРБАН КОНЦЕПЦІЯ",
+            client: "UN HABITAT, RO3KVIT",
+            services: "Координація, міський розвиток, партисипація, проведення інтерв’ю",
+            description: "За підтримки: Федерального міністерства економічного співробітництва та розвитку Німеччини (BMZ), ООН-Хабітат та ГО «Ро3квіт». \n\n Команда: Трускавецька міська рада, ООН-Хабітат Україна та ГО «Ро3квіт».\n\n Подяки: благодійному фонду «Голоси дітей», ГО «Асоціація інвалідів», ГО «Кебєта», Будинку учнівської творчості, Університету третього віку, Раді ВПО м. Трускавець, директору школи №2 та головам ОСББ за участь і цінні коментарі. \n\n Викладені у звіті висновки та рекомендації не обов’язково відображають офіційну позицію ООН-Хабітат, її Керівної ради чи держав-членів. Позначення та матеріали документа не визначають позицію ООН щодо правового статусу територій, кордонів чи органів влади.\n\n Міська акупунктура — точкове втручання, що запускає ширші позитивні зміни в районі. \n\n У цьому проєкті ключовою «больовою точкою» є занедбаний простір колишньої котельні, який може стати каталізатором розвитку та покращення якості життя всього району. \n\n 11 жовтня 2025 року в Трускавці відбувся партисипативний воркшоп із мешканцями району. Його метою було виявити ключові проблеми території, щоденні потреби мешканців та визначити пріоритети для майбутніх просторових втручань. Учасники різного віку та соціальних груп працювали з картами району, позначаючи проблемні місця, небезпечні ділянки, бажані маршрути, зелені зони та потенційні точки розвитку. \n\n Зібрані пропозиції стали основою для формування просторової концепції та подальших сценаріїв розвитку району, заснованих на реальних потребах громади."
         }
     },
 
@@ -248,16 +248,16 @@ const projectsData = [
         en: {
             title: "Volumetric Shapes",
             category: "VISUAL IDENTITY",
-            client: "Synaptic Lab",
+            client: "Personal work",
             services: "Logo Design, Packaging Concept",
-            description: "Concept identity exploring sculptural structures, volumetric 3D folds, and fluorescent foil embossing templates for high-end technology research companies."
+            description: "Volumetric Shapes is a project developed as an attempt to regain focus, manage anxiety, and learn the essential techniques of working with tile. \n\n The project uses old reclaimed tiles. One of the exercises was to create a mosaic featuring a cat named Hapukoor, which means “sour cream” in Estonian. \n\n The brick-sized mosaic pieces are part of WILDA, a project in which two architects / urbanists explored ways of designing spaces for non-human life. My focus was on filling gaps left by missing bricks with tiles, creating small spaces behind them where insects could live and nest."
         },
         ua: {
             title: "Об'ємні фігури",
             category: "ВІЗУАЛЬНА АЙДЕНТИКА",
-            client: "Лабораторія Синаптик",
-            services: "Дизайн логотипів, Концепт пакування",
-            description: "Концепт фірмового стилю, що досліджує скульптурні структури, об'ємні 3D-складки та тиснення флуоресцентною фольгою для науково-дослідних компаній."
+            client: "Персональна робота",
+            services: "Дизайн мозаїки, Концепція біорізноманіття",
+            description: "Об’ємні форми це проєкт, розроблений як спроба повернути собі концентрацію, впоратися з тривожністю та опанувати базові техніки роботи з плиткою. \n\n У проєкті використано стару плитку повторного використання. Однією з вправ було створення мозаїки із зображенням кота на ім’я Hapukoor, що естонською означає «сметана». \n\n Мозаїчні елементи розміром із цеглу є частиною проєкту WILDA, у межах якого двоє архітекторів та урбаністів досліджували способи створення просторів для нечеловічого життя. Моєю метою було заповнити плиткою порожнини, що залишилися після відсутніх цеглин, створюючи за нею невеликі простори, де могли б жити та облаштовуватися комахи."
         }
     },
     
@@ -280,18 +280,18 @@ const projectsData = [
             { src: "assets/modulehouse_13.png" }
         ],
         en: {
-            title: "Volumetric Shapeswwww",
-            category: "VISUAL IDENTITY",
-            client: "Synaptic Lab",
-            services: "Logo Design, Packaging Concept",
-            description: "Concept identity exploring sculptural structures, volumetric 3D folds, and fluorescent foil embossing templates for high-end technology research companies."
+            title: "Module",
+            category: "ARCHITECTURE & DESIGN",
+            client: "ALL RIGHT DEVELOPMENT",
+            services: "Concept, Architecture, Design, Visualisation",
+            description: "The project is a collaborative search with the client for alternative models of affordable housing for the Ukrainian market, responding to growing housing needs and reduced financial capacity caused by the war. The proposed space is one possible approach to organising the interior of a modular housing unit. \n\n This option is about space and possibilities, rather than a single fixed solution. Modular housing can adapt to different needs and budgets — from more comfortable living spaces to more modest solutions focused on providing basic housing. \n\n The key principle is affordability through material optimisation and the reuse of resources, including bio-based insulation and reclaimed timber."
         },
         ua: {
-            title: "Об'ємні фігуриwwwww",
-            category: "ВІЗУАЛЬНА АЙДЕНТИКА",
-            client: "Лабораторія Синаптик",
-            services: "Дизайн логотипів, Концепт пакування",
-            description: "Концепт фірмового стилю, що досліджує скульптурні структури, об'ємні 3D-складки та тиснення флуоресцентною фольгою для науково-дослідних компаній."
+            title: "Модуль",
+            category: "АРХІТЕКТУРА ТА ДИЗАЙН",
+            client: "ALL RIGHT DEVELOPMENT",
+            services: "Концепція, Архітектура, Дизайн, Візуалізація",
+            description: "Проєкт це спільний з замовником пошук альтернативних моделей доступного житла для українського ринку в умовах зростання потреб та зниження фінансових можливостей населення через війну. Запропонований простір є одним із можливих варіантів організації внутрішнього середовища модульного житла. \n\n Цей варіант — про простір і можливості, а не про єдине фіксоване рішення. Модульне житло може адаптуватися до різних потреб і бюджетів: від більш комфортних просторів до скромніших рішень, орієнтованих на базове забезпечення житлом. \n\n Ключовий принцип — доступність за рахунок оптимізації матеріалів і повторного використання ресурсів: біоутеплювача та повторно використаної деревини."
         }
     }
 ];
