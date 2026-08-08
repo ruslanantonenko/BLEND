@@ -496,8 +496,8 @@ function initPhysicsCanvas() {
     let mouse = { x: -1000, y: -1000, radius: 180 };
     
     const springTension = 0.015;
-    const friction = 0.2;
-    const repulsionStrength = 1.5;
+    const friction = 1
+    const repulsionStrength = 0.1;
 
     window.addEventListener('mousemove', (e) => {
         mouse.x = e.clientX;
