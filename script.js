@@ -99,6 +99,8 @@ const projectsData = [
             { src: "assets/chair_04.png" },
             { src: "assets/chair_05.png" },
             { src: "assets/chair_06.png" },
+            { src: "assets/chair_07.png" },
+            { src: "assets/chair_08.png" }
         ],
         en: {
             title: "One-Leg Oak Chair",
@@ -233,14 +235,16 @@ const projectsData = [
     {
         id: 5,
         year: "2025",
-        image: "assets/crumpled_blue_foil.png",
+        image: "assets/mosaic_01.png",
         gallery: [
-            { src: "assets/swiss_poster.png" },
-            { src: "assets/poster_01.png" },
-            { src: "assets/poster_02.png" },
-            { src: "assets/poster_03.png" },
-            { src: "assets/poster_04.png" },
-            { src: "assets/poster_05.png" }
+            { src: "assets/mosaic_02.png" },
+            { src: "assets/mosaic_03.png" },
+            { src: "assets/mosaic_04.png" },
+            { src: "assets/mosaic_05.png" },
+            { src: "assets/mosaic_06.png" },
+            { src: "assets/mosaic_07.png" },
+            { src: "assets/mosaic_08.png" },
+            { src: "assets/mosaic_09.png" }
         ],
         en: {
             title: "Volumetric Shapes",
@@ -251,6 +255,40 @@ const projectsData = [
         },
         ua: {
             title: "Об'ємні фігури",
+            category: "ВІЗУАЛЬНА АЙДЕНТИКА",
+            client: "Лабораторія Синаптик",
+            services: "Дизайн логотипів, Концепт пакування",
+            description: "Концепт фірмового стилю, що досліджує скульптурні структури, об'ємні 3D-складки та тиснення флуоресцентною фольгою для науково-дослідних компаній."
+        }
+    },
+    
+     {
+        id: 6,
+        year: "2025",
+        image: "assets/modulehouse_01.png",
+        gallery: [
+            { src: "assets/modulehouse_02.png" },
+            { src: "assets/modulehouse_03.png" },
+            { src: "assets/modulehouse_04.png" },
+            { src: "assets/modulehouse_05.png" },
+            { src: "assets/modulehouse_06.png" },
+            { src: "assets/modulehouse_07.png" },
+            { src: "assets/modulehouse_08.png" },
+            { src: "assets/modulehouse_09.png" },
+            { src: "assets/modulehouse_10.png" },
+            { src: "assets/modulehouse_11.png" },
+            { src: "assets/modulehouse_12.png" },
+            { src: "assets/modulehouse_13.png" }
+        ],
+        en: {
+            title: "Volumetric Shapeswwww",
+            category: "VISUAL IDENTITY",
+            client: "Synaptic Lab",
+            services: "Logo Design, Packaging Concept",
+            description: "Concept identity exploring sculptural structures, volumetric 3D folds, and fluorescent foil embossing templates for high-end technology research companies."
+        },
+        ua: {
+            title: "Об'ємні фігуриwwwww",
             category: "ВІЗУАЛЬНА АЙДЕНТИКА",
             client: "Лабораторія Синаптик",
             services: "Дизайн логотипів, Концепт пакування",
@@ -625,14 +663,15 @@ function initPhysicsCanvas() {
             columns.push(padding + i * columnWidth);
         }
 
-        // Project dots (6 dots mapped to projects 0 to 5)
+        // Project dots (6 dots mapped to projects 0 to 6)
         const dotPlacements = [
             { col: 1, yFactor: 0.22, id: 0 },
             { col: 2, yFactor: 0.68, id: 1 },
             { col: 4, yFactor: 0.41, id: 2 },
             { col: 5, yFactor: 0.72, id: 3 },
             { col: 7, yFactor: 0.55, id: 4 },
-            { col: 10, yFactor: 0.72, id: 5 }
+            { col: 8, yFactor: 0.22, id: 5 },
+            { col: 10, yFactor: 0.72, id: 6 }
         ];
 
         dotPlacements.forEach(placement => {
