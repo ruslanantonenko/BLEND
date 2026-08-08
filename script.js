@@ -98,8 +98,7 @@ const projectsData = [
             { src: "assets/chair_02.png" },
             { src: "assets/chair_03.png" },
             { src: "assets/chair_04.png" },
-            { src: "assets/chair_main.png" },
-            { src: "assets/chair_main.png" }
+
         ],
         en: {
             title: "Brutal Typography",
