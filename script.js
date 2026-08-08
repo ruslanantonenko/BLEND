@@ -104,14 +104,14 @@ const projectsData = [
         ],
         en: {
             title: "One-Leg Oak Chair",
-            category: "Wood working",
+            category: "WOOD WORKING",
             client: "Personal studio work",
             services: "Furniture Design, Material Study, Chair Development",
             description: "Created during the Vares Residency, this one oak leg chair became a personal healing project, a way to slow down, regain focus, and reconnect with making through working with wood. In the midst of the constant pressure of war in Ukraine, the physical process of shaping, sanding, and assembling the wood offered a rare opportunity to concentrate on something tangible and immediate. \n\n The project was about designing an object inspired by Japanese aesthetics, an object that could create a sense of focus both through the hands-on process of making it and through its final form. The result is a chair that is deliberately simple, comfortable, and slightly funky. Its single oak leg gives it a playful character while the proportions and curved seat make it comfortable to use. \n\n It is both a functional piece of furniture and a small personal exercise in finding calm through making."
         },
         ua: {
             title: "Стілець на одній дубовій ніжці",
-            category: "Робота з деревом",
+            category: "РОБОТА З ДЕРЕВОМ",
             client: "Проєкти студії",
             services: "Дизайн меблів, дослідження матеріалу, розробка стільцяв",
             description: "Створений під час резиденції у Vares (Естонія), цей стілець на дубової ніжці став особистим проєктом для відновлення. Способом сповільнитися, повернути концентрацію та знову відчути задоволення від роботи руками й деревом. На тлі постійного тиску війни в Україні фізичний процес формування, шліфування та роботи з деревої став рідкісною можливістю зосередитися на чомусь конкретному й відчутному. \n\n Проєкт полягав у створенні об’єкта, натхненого японською естетикою, який би допомагав зосередитися під час роботи руками та водночас був естетично привабливим. У результаті вийшов простий, комфортний і водночас трохи хуліганський стілець. Одна дубова ніжка надає йому грайливого характеру, а пропорції та вигнуте сидіння роблять його зручним у використанні. \n\n Це одночасно функціональний предмет меблів і невелика особиста практика пошуку спокою через процес створення."
@@ -168,7 +168,7 @@ const projectsData = [
             title: "Теремківський Амстердам",
             category: "АРХІТЕКТУРА",
             client: "ALL RIGHT DEVELOPMENT",
-            services: "3Концепція, Архітектура, Візуалізація",
+            services: "Концепція, Архітектура, Візуалізація",
             description: "Цей проєкт був моєю першою самостійною роботою з київським девелопером ALL RIGHT, виконаною незадовго до повномасштабного вторгнення росії в Україну у 2022 році.n\n Ділянка була відносно обмеженою, проте її розташування поблизу станції метро «Теремки» мало значний потенціал. Основною ідеєю було створити нову ідентичність для цієї напів житлової території та надати їй виразного характеру. n\n Проєкт був натхненний темою подорожей, а Амстердам, Нідерланди, був обраний як напрямок і концептуальний референс. n\n Оскільки району бракує торговельних і рекреаційних функцій, перший поверх уздовж основної дороги було запропоновано відвести під громадські та комерційні функції. n\n Фасади, орієнтовані на сусідні будівлі та зелені зони, відведені під житлову функцію, із приватними садами, що створюють більш відокремлене та камерне середовище для мешканців."
         }
     },
@@ -186,17 +186,17 @@ const projectsData = [
             { src: "assets/kyiv_avenue_08.png" }
         ],
         en: {
-            title: "Grid & Structure",
-            category: "EDITORIAL DESIGN",
-            client: "Kyiv Art Book Fair",
-            services: "Editorial, Book Design, Typography",
+            title: "7 AVENUE",
+            category: "ARCHITECTURE & DESIGN",
+            client: "ALL RIGHT DEVELOPMENT",
+            services: "Concept, Architecture, Design, Visualisation",
             description: "A catalog layout design presenting experimental editorial graphics, strict baseline structures, and geometric illustrations reflecting post-industrial print layout constraints."
         },
         ua: {
-            title: "Сітка та структура",
-            category: "РЕДАКЦІЙНИЙ ДИЗАЙН",
-            client: "Київський книжковий ярмарок",
-            services: "Верстка, Дизайн книг, Типографіка",
+            title: "7 АВЕНЮ",
+            category: "АРХІТЕКТУРА ТА ДИЗАЙН",
+            client: "ALL RIGHT DEVELOPMENT",
+            services: "Концепція, Архітектура, Дизайн, Візуалізація",
             description: "Дизайн макету каталогу з експериментальною редакційною графікою, суворими сітками та геометричними ілюстраціями, що відображають постіндустріальний друк."
         }
     },
