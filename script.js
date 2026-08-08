@@ -96,10 +96,10 @@ const projectsData = [
         gallery: [
             { src: "assets/chair_main.png" },
             { src: "assets/chair_main.png" },
-            { src: "assets/poster_02.png" },
-            { src: "assets/poster_03.png" },
-            { src: "assets/poster_04.png" },
-            { src: "assets/poster_05.png" }
+            { src: "assets/chair_main.png" },
+            { src: "assets/chair_main.png" },
+            { src: "assets/chair_main.png" },
+            { src: "assets/chair_main.png" }
         ],
         en: {
             title: "Brutal Typography",
