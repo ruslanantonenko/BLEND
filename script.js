@@ -101,58 +101,59 @@ const projectsData = [
             { src: "assets/chair_06.png" },
         ],
         en: {
-            title: "Brutal Typography",
-            category: "BRAND IDENTITY / PRINT",
-            client: "Zurich Design Symposium",
-            services: "Art Direction, Layout Grid, Poster Series",
-            description: "A poster design system and branding campaign for the Swiss Legacy exhibition. Built entirely around typographic grids, high-contrast sans-serif letters, and Swiss brutalist design principles."
+            title: "One-Leg Oak Chair",
+            category: "Wood working",
+            client: "Personal studio work",
+            services: "Furniture Design, Material Study, Chair Development",
+            description: "Created during the Vares Residency, this one oak leg chair became a personal healing project, a way to slow down, regain focus, and reconnect with making through working with wood. In the midst of the constant pressure of war in Ukraine, the physical process of shaping, sanding, and assembling the wood offered a rare opportunity to concentrate on something tangible and immediate. \n\n The project was about designing an object inspired by Japanese aesthetics, an object that could create a sense of focus both through the hands-on process of making it and through its final form. The result is a chair that is deliberately simple, comfortable, and slightly funky. Its single oak leg gives it a playful character while the proportions and curved seat make it comfortable to use. \n\n It is both a functional piece of furniture and a small personal exercise in finding calm through making."
         },
         ua: {
-            title: "Брутальна друкарня!!",
-            category: "АЙДЕНТИКА / ПРИНТ",
-            client: "Цюрихський симпозіум дизайну",
-            services: "Арт-дирекшн, Модульна сітка, Серія постерів",
-            description: "Дизайн-система постерів та брендингова кампанія для виставки Swiss Legacy. Побудовано виключно на основі жорстких друкарських сіток, контрастних гротескних шрифтів та швейцарського бруталізму."
+            title: "Стілець на одній дубовій ніжці",
+            category: "Робота з деревом",
+            client: "Проєкти студії",
+            services: "Дизайн меблів, дослідження матеріалу, розробка стільцяв",
+            description: "Створений під час резиденції у Vares (Естонія), цей стілець на дубової ніжці став особистим проєктом для відновлення. Способом сповільнитися, повернути концентрацію та знову відчути задоволення від роботи руками й деревом. На тлі постійного тиску війни в Україні фізичний процес формування, шліфування та роботи з деревої став рідкісною можливістю зосередитися на чомусь конкретному й відчутному. \n\n Проєкт полягав у створенні об’єкта, натхненого японською естетикою, який би допомагав зосередитися під час роботи руками та водночас був естетично привабливим. У результаті вийшов простий, комфортний і водночас трохи хуліганський стілець. Одна дубова ніжка надає йому грайливого характеру, а пропорції та вигнуте сидіння роблять його зручним у використанні. \n\n Це одночасно функціональний предмет меблів і невелика особиста практика пошуку спокою через процес створення."
         }
     },
 
     {
         id: 1,
-        year: "2026",
-        image: "assets/crumpled_blue_foil.png",
+        year: "2025",
+        image: "assets/lamp_01.png",
         gallery: [
-            { src: "assets/crumpled_blue_foil.png" },
-            { src: "assets/crumpled_blue_foil_NBG.png" },
-            { src: "assets/crumpled_blue_foil_NBG_2.png" },
-            { src: "assets/crumpled_blue_foil copy.png" }
+            { src: "assets/lamp_02.png" },
+            { src: "assets/lamp_03.png" },
+            { src: "assets/lamp_04.png" },
+            { src: "assets/lamp_05.png" }
         ],
         en: {
-            title: "Kinetic Systems",
-            category: "DIGITAL EXPERIENCE",
-            client: "Berlin Electronica",
-            services: "UX/UI Design, Creative Coding, Motion",
-            description: "An interactive digital installation exploring motion mechanics, kinetic letterforms, and fluid mouse follow layouts for electronic music artists in Berlin."
+            title: "Brutal Printing",
+            category: "3D PRINTING",
+            client: "Personal studio work",
+            services: "Parametric Design, Grasshopper, 3D Scanning, 3D Printing",
+            description: "The project explores the combination of digital technology and organic forms through experiments with 3D printing. The main idea was to investigate how natural, fluid forms can be reinterpreted through digital modelling and transformed into functional objects. \n\n The result is a series of 3D-printed lamps, where organic forms are combined with the function of lighting, creating objects that exist somewhere between the natural and the artificial."
         },
         ua: {
-            title: "Кінетичні системи",
-            category: "ЦИФРОВИЙ ДОСВІД",
-            client: "Берлін Електроніка",
-            services: "UX/UI дизайн, Креативний код, Анімація",
-            description: "Інтерактивна цифрова інсталяція, що досліджує механіку руху, кінетичні форми літер та плавні інтерфейси слідування за курсором для електронної сцени Берліна."
+            title: "Брутальна Друкарня",
+            category: "3Д ДРУК",
+            client: "Проєкти студії",
+            services: "Індустріальний дизайн, 3D-моделювання, параметричний дизайн Grasshopper, 3Dдрук",
+            description: "Проєкт досліджує поєднання цифрової технології та органічних форм через експерименти з 3D-друком. Основною ідеєю було дослідити, як природні, пластичні форми можуть бути переосмислені за допомогою цифрового моделювання та перетворені на функціональні об’єкти. \n\n Результатом стала серія 3D-друкованих ламп, у яких органічна форма поєднується з функцією освітлення, створюючи об’єкти на межі між природним і штучним."
         }
     },
 
     {
         id: 2,
-        year: "2025",
-        image: "assets/chrome_sculpture.png",
+        year: "2022",
+        image: "assets/amsterdam_01.png",
           gallery: [
-            { src: "assets/swiss_poster.png" },
-            { src: "assets/poster_01.png" },
-            { src: "assets/poster_02.png" },
-            { src: "assets/poster_03.png" },
-            { src: "assets/poster_04.png" },
-            { src: "assets/poster_05.png" }
+            { src: "assets/amsterdam_02.png" },
+            { src: "assets/amsterdam_03.png" },
+            { src: "assets/amsterdam_04.png" },
+            { src: "assets/amsterdam_05.png" },
+            { src: "assets/amsterdam_06.png" },
+            { src: "assets/amsterdam_07.png" },
+            { src: "assets/amsterdam_08.png" }
         ],
         en: {
             title: "Generative Chaos",
@@ -171,15 +172,16 @@ const projectsData = [
     },
     {
         id: 3,
-        year: "2025",
-        image: "assets/swiss_poster.png",
+        year: "2022",
+        image: "assets/kyiv_avenue_01.png",
         gallery: [
-            { src: "assets/swiss_poster.png" },
-            { src: "assets/poster_01.png" },
-            { src: "assets/poster_02.png" },
-            { src: "assets/poster_03.png" },
-            { src: "assets/poster_04.png" },
-            { src: "assets/poster_05.png" }
+            { src: "assets/kyiv_avenue_02.png" },
+            { src: "assets/kyiv_avenue_03.png" },
+            { src: "assets/kyiv_avenue_04.png" },
+            { src: "assets/kyiv_avenue_05.png" },
+            { src: "assets/kyiv_avenue_06.png" },
+            { src: "assets/kyiv_avenue_07.png" },
+            { src: "assets/kyiv_avenue_08.png" }
         ],
         en: {
             title: "Grid & Structure",
@@ -199,15 +201,18 @@ const projectsData = [
 
     {
         id: 4,
-        year: "2026",
-        image: "assets/chrome_sculpture.png",
+        year: "2025",
+        image: "assets/truskavets_01.png",
          gallery: [
-            { src: "assets/swiss_poster.png" },
-            { src: "assets/poster_01.png" },
-            { src: "assets/poster_02.png" },
-            { src: "assets/poster_03.png" },
-            { src: "assets/poster_04.png" },
-            { src: "assets/poster_05.png" }
+            { src: "assets/truskavets_02.png" },
+            { src: "assets/truskavets_03.png" },
+            { src: "assets/truskavets_04.png" },
+            { src: "assets/truskavets_05.png" },
+            { src: "assets/truskavets_06.png" },
+            { src: "assets/truskavets_07.png" },
+            { src: "assets/truskavets_08.png" },
+            { src: "assets/truskavets_09.png" },
+            { src: "assets/truskavets_10.png" }
         ],
         en: {
             title: "Chrome Aesthetics",
@@ -495,8 +500,8 @@ function initPhysicsCanvas() {
     let mouse = { x: -1000, y: -1000, radius: 180 };
     
     const springTension = 0.015;
-    const friction = 1
-    const repulsionStrength = 0.1;
+    const friction = 0.2
+    const repulsionStrength = 1.5;
 
     window.addEventListener('mousemove', (e) => {
         mouse.x = e.clientX;
@@ -699,6 +704,13 @@ function initPhysicsCanvas() {
             
             // Toggle states on body and card
             document.body.classList.add('project-hover');
+               const cursor = document.getElementById('custom-cursor');
+        if (cursor) {
+            cursor.setAttribute(
+                'data-text',
+                staticTranslations[currentLanguage]["view-btn"]
+            );
+        }
             floatCard.classList.add('active');
             
             // Position card near mouse coordinate with spring lag

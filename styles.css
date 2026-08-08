@@ -1552,7 +1552,7 @@ img.loaded + .stacked-caption, img.loaded {
 }
 
 .project-hover #custom-cursor::after {
-    content: 'VIEW';
+    content: attr(data-text);
     color: var(--bg-color);
     font-family: var(--font-mono);
     font-size: 0.52rem;
