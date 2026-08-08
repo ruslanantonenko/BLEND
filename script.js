@@ -94,7 +94,7 @@ const projectsData = [
         year: "2026",
         image: "assets/chair_main.png",
         gallery: [
-            { src: "assets/swiss_poster.png" },
+            { src: "assets/chair_main.png" },
             { src: "assets/poster_01.png" },
             { src: "assets/poster_02.png" },
             { src: "assets/poster_03.png" },
