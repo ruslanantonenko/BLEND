@@ -302,13 +302,13 @@ const perspectivesData = [
         en: {
             date: "OCTOBER 2026",
             read: "5 MIN READ",
-            title: "THE RESURGENCE OF SWISS BRUTALISM IN DIGITAL PLATFORMS",
+            title: "CITY BRANDING: WHY SHOULD UKRAINIAN CITIES TALK ABOUT THEMSELVES?",
             excerpt: "How high-contrast grotesque typefaces, geometric grids, and unyielding layouts are redefining the user experience in a sea of homogenized SaaS designs."
         },
         ua: {
             date: "ЖОВТЕНЬ 2026",
             read: "5 ХВ ЧИТАННЯ",
-            title: "ВІДРОДЖЕННЯ ШВЕЙЦАРСЬКОГО БРУТАЛІЗМУ В ЦИФРОВИХ ПЛАТФОРМАХ",
+            title: "БРЕНД МІСТА: НАВІЩО УКРАЇНСЬКИМ МІСТАМ ГОВОРИТИ ПРО СЕБЕ?",
             excerpt: "Як висококонтрастні гротескні шрифти, геометричні сітки та безкомпромісні макети переосмислюють досвід користувачів у морі одноманітного дизайну."
         }
     },
