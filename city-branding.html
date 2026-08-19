@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Бренд міста: навіщо українським містам говорити про себе? — Ruslan Antonenko">
+    <title>Бренд міста — Ruslan Antonenko</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f5f5f3;
+            --text: #111;
+            --muted: #70706d;
+            --line: #d5d5d2;
+            --accent: #003cff;
+        }
+
+        body[data-theme="dark"] {
+            --bg: #111;
+            --text: #f2f2f0;
+            --muted: #999;
+            --line: #333;
+            --accent: #5575ff;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, Arial, sans-serif;
+            transition: background .3s ease, color .3s ease;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4vw;
+            border-bottom: 1px solid var(--line);
+            background: color-mix(in srgb, var(--bg) 92%, transparent);
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -.05em;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        .back,
+        .lang button,
+        .theme {
+            border: 0;
+            background: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 4px;
+        }
+
+        .back:hover,
+        .lang button.active,
+        .lang button:hover {
+            color: var(--text);
+        }
+
+        .lang {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .theme {
+            font-size: 15px;
+        }
+
+        main {
+            width: min(1120px, 90vw);
+            margin: 0 auto;
+            padding: 150px 0 100px;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 24px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        h1 {
+            max-width: 1000px;
+            margin: 44px 0 70px;
+            font-size: clamp(44px, 7vw, 92px);
+            line-height: .95;
+            letter-spacing: -.065em;
+            font-weight: 500;
+        }
+
+        article {
+            max-width: 760px;
+            margin-left: 12%;
+            font-size: 18px;
+            line-height: 1.72;
+            letter-spacing: -.012em;
+        }
+
+        article p {
+            margin: 0 0 30px;
+        }
+
+        article p:first-child {
+            font-size: 23px;
+            line-height: 1.45;
+            letter-spacing: -.025em;
+            margin-bottom: 46px;
+        }
+
+        article strong {
+            font-weight: 600;
+        }
+
+        .article-end {
+            margin-top: 75px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+            line-height: 1.6;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        footer {
+            margin-top: 100px;
+            padding-top: 25px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        footer a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        footer a:hover { color: var(--accent); }
+
+        @media (max-width: 700px) {
+            header {
+                height: 64px;
+                padding: 0 5vw;
+            }
+
+            .header-right { gap: 10px; }
+
+            .back { font-size: 9px; }
+
+            main {
+                width: 90vw;
+                padding-top: 110px;
+            }
+
+            .meta {
+                gap: 20px;
+            }
+
+            h1 {
+                margin-top: 35px;
+                margin-bottom: 50px;
+                font-size: clamp(42px, 13vw, 70px);
+            }
+
+            article {
+                margin-left: 0;
+                font-size: 16px;
+                line-height: 1.7;
+            }
+
+            article p:first-child {
+                font-size: 20px;
+            }
+
+            footer {
+                gap: 20px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="../index.html" class="logo">R/A</a>
+
+    <div class="header-right">
+        <a href="../index.html" class="back" data-i18n="back">← НАЗАД ДО СТАТЕЙ</a>
+
+        <div class="lang">
+            <button class="active" data-lang="ua">UA</button>
+            <span>/</span>
+            <button data-lang="en">EN</button>
+        </div>
+
+        <button class="theme" id="theme-toggle" aria-label="Toggle theme">◐</button>
+    </div>
+</header>
+
+<main>
+    <div class="meta">
+        <span data-i18n="date">СЕРПЕНЬ 2026</span>
+        <span data-i18n="read">5 ХВ ЧИТАННЯ</span>
+    </div>
+
+    <h1 data-i18n="title">БРЕНД МІСТА: НАВІЩО УКРАЇНСЬКИМ МІСТАМ ГОВОРИТИ ПРО СЕБЕ?</h1>
+
+    <article>
+
+        <p data-i18n="p1">
+            <strong>Що ми уявляємо, коли чуємо назву міста? Його архітектуру, людей, історію, певні місця чи можливості?</strong>
+        </p>
+
+        <p data-i18n="p2">
+            Усе це формує образ міста. Але бренд міста це дещо більше. Це спосіб сформулювати, ким є місто сьогодні, куди воно рухається та як хоче позиціонувати себе назовні.
+            Міста, як і компанії, конкурують за увагу, інвестиції, бізнес, нові проєкти, туристів, таланти та міжнародні партнерства. Тому важливо не лише мати сильні сторони, а й уміти зрозуміло про них розповісти.
+        </p>
+
+        <p data-i18n="p3">
+            Щоб краще знати історію міста, розуміти структуру та культуру міста. Також дослідження допомагає визначити, що саме відрізняє місто від інших. Воно також дозволяє побачити, як місто сприймають різні групи, та зрозуміти, чи відрізняється інституційне бачення від сприйняття мешканців. У контексті війни дослідження ідентичності є важливим для збереження історичної пам'яті, культурної спадщини та унікальності українських міст.
+        </p>
+
+        <p data-i18n="p4">
+            <strong>Як потенційний інвестор сприймає презентацію міста? Що він запам'ятає після першого знайомства? Чим це місто відрізняється від десятків інших?</strong>
+            Саме тут бренд стає інструментом позиціонування та міського пітчу. Він допомагає визначити ключові переваги міста, сформувати зрозуміле повідомлення для різних аудиторій і об'єднати окремі проєкти та ініціативи в одну послідовну історію.
+        </p>
+
+        <p data-i18n="p5">
+            Тому робота над брендом починається не з логотипу чи слогану. Спочатку потрібно зрозуміти саме місто: його сильні сторони, характер, потенціал, сприйняття мешканцями та можливі напрями розвитку.
+        </p>
+
+        <p data-i18n="p6">
+            Зараз ми працюємо над соціальним дослідженням ідентичності Славутича. Це місто з унікальною історією, впізнаваною архітектурою та сильним людським потенціалом. <strong>Водночас важливим питанням стає те, яким Славутич хоче бути завтра і яке місце він прагне зайняти на мапі України та Європи.</strong>
+        </p>
+
+        <p data-i18n="p7">
+            Через дослідження, опитування та партисипативні воркшопи ми вивчаємо, як місто сприймають його мешканці, які цінності вони з ним пов'язують, які місця формують його характер та які можливості можуть стати основою майбутнього позиціонування.
+        </p>
+
+        <p data-i18n="p8">
+            Завдання бренду допомогти перетворити ці переваги на зрозумілу пропозицію: чому тут варто жити, працювати, створювати проєкти, інвестувати та будувати партнерства.
+            Тому сильний бренд міста — це не просто приваблива айдентика, а спільне розуміння того, у чому унікальність міста, які його переваги, як воно хоче позиціонувати себе та чому люди, бізнес і партнери мають обрати саме його.
+        </p>
+
+        <div class="article-end" data-i18n="end">
+            КІНЕЦЬ СТАТТІ
+        </div>
+    </article>
+
+    <footer>
+        <a href="../index.html" data-i18n="backFooter">← НАЗАД ДО ПОРТФОЛІО</a>
+        <span>© 2026 RUSLAN ANTONENKO</span>
+    </footer>
+</main>
+
+<script>
+    const content = {
+        ua: {
+            back: "← НАЗАД ДО СТАТЕЙ",
+            date: "СЕРПЕНЬ 2026",
+            read: "5 ХВ ЧИТАННЯ",
+            title: "БРЕНД МІСТА: НАВІЩО УКРАЇНСЬКИМ МІСТАМ ГОВОРИТИ ПРО СЕБЕ?",
+            p1: "Що ми уявляємо, коли чуємо назву міста? Його архітектуру, людей, історію, певні місця чи можливості?",
+            p2: "Усе це формує образ міста. Але бренд міста це дещо більше. Це спосіб сформулювати, ким є місто сьогодні, куди воно рухається та як хоче позиціонувати себе назовні. Міста, як і компанії, конкурують за увагу, інвестиції, бізнес, нові проєкти, туристів, таланти та міжнародні партнерства. Тому важливо не лише мати сильні сторони, а й уміти зрозуміло про них розповісти.",
+            p3: "Щоб краще знати історію міста, розуміти структуру та культуру міста. Також дослідження допомагає визначити, що саме відрізняє місто від інших. Воно також дозволяє побачити, як місто сприймають різні групи, та зрозуміти, чи відрізняється інституційне бачення від сприйняття мешканців. У контексті війни дослідження ідентичності є важливим для збереження історичної пам'яті, культурної спадщини та унікальності українських міст.",
+            p4: "Як потенційний інвестор сприймає презентацію міста? Що він запам'ятає після першого знайомства? Чим це місто відрізняється від десятків інших? Саме тут бренд стає інструментом позиціонування та міського пітчу. Він допомагає визначити ключові переваги міста, сформувати зрозуміле повідомлення для різних аудиторій і об'єднати окремі проєкти та ініціативи в одну послідовну історію.",
+            p5: "Тому робота над брендом починається не з логотипу чи слогану. Спочатку потрібно зрозуміти саме місто: його сильні сторони, характер, потенціал, сприйняття мешканцями та можливі напрями розвитку.",
+            p6: "Зараз ми працюємо над соціальним дослідженням ідентичності Славутича. Це місто з унікальною історією, впізнаваною архітектурою та сильним людським потенціалом. Водночас важливим питанням стає те, яким Славутич хоче бути завтра і яке місце він прагне зайняти на мапі України та Європи.",
+            p7: "Через дослідження, опитування та партисипативні воркшопи ми вивчаємо, як місто сприймають його мешканці, які цінності вони з ним пов'язують, які місця формують його характер та які можливості можуть стати основою майбутнього позиціонування.",
+            p8: "Завдання бренду допомогти перетворити ці переваги на зрозумілу пропозицію: чому тут варто жити, працювати, створювати проєкти, інвестувати та будувати партнерства. Тому сильний бренд міста — це не просто приваблива айдентика, а спільне розуміння того, у чому унікальність міста, які його переваги, як воно хоче позиціонувати себе та чому люди, бізнес і партнери мають обрати саме його.",
+            end: "КІНЕЦЬ СТАТТІ",
+            backFooter: "← НАЗАД ДО ПОРТФОЛІО"
+        },
+        en: {
+            back: "← BACK TO ARTICLES",
+            date: "AUGUST 2026",
+            read: "5 MIN READ",
+            title: "CITY BRANDING: WHY SHOULD UKRAINIAN CITIES TALK ABOUT THEMSELVES?",
+            p1: "What do we imagine when we hear the name of a city? Its architecture, people, history, particular places or opportunities?",
+            p2: "All of this shapes the image of a city. But a city brand is something more. It is a way to formulate who the city is today, where it is heading and how it wants to position itself externally. Cities, like companies, compete for attention, investment, business, new projects, tourists, talent and international partnerships. Therefore, it is important not only to have strong sides, but also to be able to communicate them clearly.",
+            p3: "Research helps us better understand a city's history, structure and culture. It also helps identify what distinguishes one city from others. It allows us to see how different groups perceive the city and understand whether the institutional vision differs from residents' perceptions. In the context of war, identity research is important for preserving historical memory, cultural heritage and the uniqueness of Ukrainian cities.",
+            p4: "How does a potential investor perceive a city's presentation? What will they remember after the first introduction? What makes this city different from dozens of others? This is where branding becomes a tool for positioning and the city's pitch. It helps identify key advantages, formulate a clear message for different audiences and connect individual projects and initiatives into one coherent story.",
+            p5: "That is why work on a brand does not begin with a logo or slogan. First, it is necessary to understand the city itself: its strengths, character, potential, residents' perceptions and possible directions of development.",
+            p6: "We are currently working on social research into the identity of Slavutych. It is a city with a unique history, recognizable architecture and strong human potential. At the same time, an important question is what Slavutych wants to become tomorrow and what place it wants to occupy on the map of Ukraine and Europe.",
+            p7: "Through research, surveys and participatory workshops, we are exploring how residents perceive the city, what values they associate with it, which places shape its character and which opportunities could form the basis for its future positioning.",
+            p8: "The role of a brand is to turn these advantages into a clear proposition: why it is worth living, working, creating projects, investing and building partnerships here. A strong city brand is therefore not simply attractive visual identity, but a shared understanding of what makes the city unique, what its advantages are, how it wants to position itself and why people, businesses and partners should choose it.",
+            end: "END OF ARTICLE",
+            backFooter: "← BACK TO PORTFOLIO"
+        }
+    };
+
+    function setLanguage(lang) {
+        const t = content[lang];
+        document.documentElement.lang = lang === "ua" ? "uk" : "en";
+
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.dataset.i18n;
+            if (t[key]) el.textContent = t[key];
+        });
+
+        localStorage.setItem("language", lang);
+
+        document.querySelectorAll(".lang button").forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.lang === lang);
+        });
+    }
+
+    document.querySelectorAll(".lang button").forEach(btn => {
+        btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+    });
+
+    const savedLanguage = localStorage.getItem("language") || "ua";
+    setLanguage(savedLanguage);
+
+    const themeToggle = document.getElementById("theme-toggle");
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.dataset.theme = "dark";
+    }
+
+    themeToggle.addEventListener("click", () => {
+        if (document.body.dataset.theme === "dark") {
+            delete document.body.dataset.theme;
+            localStorage.setItem("theme", "light");
+        } else {
+            document.body.dataset.theme = "dark";
+            localStorage.setItem("theme", "dark");
+        }
+    });
+</script>
+
+</body>
+</html>

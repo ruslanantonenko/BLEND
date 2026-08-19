@@ -330,16 +330,16 @@ const perspectivesData = [
     {
         id: 2,
         en: {
-            date: "MARCH 2026",
+            date: "MARCH 2025",
             read: "4 MIN READ",
-            title: "WEBGL & THE PHYSICALITY OF DIGITIZED GRAPHICS",
-            excerpt: "A deep-dive into mimicking physical foil, metallic reflections, and natural lighting offsets programmatically inside a standard viewport."
+            title: "DECENTRALISATION AND RECOVERY: LOCAL RECOVERY PLANNING",
+            excerpt: "This thematic paper examines how Ukraine’s decentralization efforts can empower local communities to become key decision-makers in post-war recovery planning, building on the country’s earlier experiences of informal and formal decentralization."
         },
         ua: {
             date: "БЕРЕЗЕНЬ 2026",
             read: "4 ХВ ЧИТАННЯ",
-            title: "WEBGL ТА ФІЗИЧНІСТЬ ОЦИФРОВАНОЇ ГРАФІКИ",
-            excerpt: "Глибоке занурення в імітацію фізичної фольги, металевих відблисків та природного освітлення програмним шляхом у вікні звичайного браузера."
+            title: "ДЕЦЕНТРАЛІЗАЦІЯ ТА ВІДНОВЛЕННЯ: МІСЦЕВЕ ПЛАНУВАННЯ ВІДНОВЛЕННЯ",
+            excerpt: "Цей тематичний документ розглядає, як децентралізація в Україні може посилити роль місцевих громад у прийнятті рішень щодо післявоєнного відновлення, спираючись на попередній досвід неформальної та формальної децентралізації."
         }
     }
 ];

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Бренд міста: навіщо українським містам говорити про себе? — R/A</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+<style>
+/* Article uses the existing site's content-overlay system exactly:
+   .content-overlay -> .overlay-header -> .overlay-body -> .perspective-post */
+.article-page {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-color);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 4vh 4vw;
+    overflow: hidden;
+}
+
+.article-page .overlay-header {
+    flex: 0 0 auto;
+    margin-bottom: 5vh;
+}
+
+.article-page .overlay-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-bottom: 4vh;
+}
+
+.article-content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.article-content .post-meta {
+    margin-bottom: .2rem;
+}
+
+.article-content .post-title {
+    margin-bottom: .3rem;
+}
+
+.article-text {
+    font-size: .95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.article-text p {
+    margin: 0 0 1.8rem;
+}
+
+.article-text p:last-child {
+    margin-bottom: 0;
+}
+
+.article-text .lead {
+    font-size: 1.05rem;
+    line-height: 1.55;
+}
+
+.article-text strong {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.article-end {
+    margin-top: 3vh;
+    padding-top: 2vh;
+    border-top: 1px solid var(--grid-color);
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    letter-spacing: .05em;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .article-page {
+        padding: 3vh 6vw;
+    }
+
+    .article-page .overlay-header {
+        margin-bottom: 4vh;
+    }
+
+    .article-content {
+        gap: .8rem;
+    }
+
+    .article-text {
+        font-size: .92rem;
+    }
+
+    .article-text .lead {
+        font-size: 1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="custom-cursor"></div>
+<div id="custom-cursor-dot"></div>
+
+<div class="grid-container">
+    <div class="grid-line"></div><div class="grid-line"></div><div class="grid-line"></div>
+    <div class="grid-line"></div><div class="grid-line"></div><div class="grid-line"></div>
+    <div class="grid-line"></div><div class="grid-line"></div><div class="grid-line"></div>
+    <div class="grid-line"></div><div class="grid-line"></div><div class="grid-line"></div>
+</div>
+
+<header class="header">
+    <a href="../index.html" class="header-logo">R/A</a>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <div class="header-right">
+        <div class="lang-switch">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <span class="lang-separator">/</span>
+            <button class="lang-btn active" data-lang="ua">UA</button>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
+            <span class="menu-text">MENU</span>
+        </button>
+    </div>
+</header>
+
+<main class="article-page">
+
+    <div class="overlay-header">
+        <span class="overlay-title" id="overlay-title">PERSPECTIVES / 03</span>
+
+        <a href="../index.html"
+           class="overlay-close"
+           style="text-decoration:none;"
+           aria-label="Back">
+            <span class="close-text" id="close-text">BACK</span>
+        </a>
+    </div>
+
+    <div class="overlay-body">
+        <article class="article-content">
+
+            <div class="post-meta">
+                <span class="post-date" id="date">СЕРПЕНЬ 2026</span>
+                <span id="read">5 ХВ ЧИТАННЯ</span>
+            </div>
+
+            <h1 class="post-title" id="title">
+                БРЕНД МІСТА: НАВІЩО УКРАЇНСЬКИМ МІСТАМ ГОВОРИТИ ПРО СЕБЕ?
+            </h1>
+
+            <div class="article-text">
+
+                <p class="lead">
+                    <strong>Що ми уявляємо, коли чуємо назву міста? Його архітектуру, людей, історію, певні місця чи можливості?</strong>
+                </p>
+
+                <p>
+                    Усе це формує образ міста. Але бренд міста це дещо більше. Це спосіб сформулювати, ким є місто сьогодні, куди воно рухається та як хоче позиціонувати себе назовні.
+                    Міста, як і компанії, конкурують за увагу, інвестиції, бізнес, нові проєкти, туристів, таланти та міжнародні партнерства.
+                    Тому важливо не лише мати сильні сторони, а й уміти зрозуміло про них розповісти.
+                </p>
+
+                <p>
+                    Щоб краще знати історію міста, розуміти структуру та культуру міста. Також дослідження допомагає визначити, що саме відрізняє місто від інших.
+                    Воно також дозволяє побачити, як місто сприймають різні групи, та зрозуміти, чи відрізняється інституційне бачення від сприйняття мешканців.
+                    У контексті війни дослідження ідентичності є важливим для збереження історичної пам'яті, культурної спадщини та унікальності українських міст.
+                </p>
+
+                <p>
+                    <strong>Як потенційний інвестор сприймає презентацію міста? Що він запам'ятає після першого знайомства? Чим це місто відрізняється від десятків інших?</strong>
+                    Саме тут бренд стає інструментом позиціонування та міського пітчу.
+                    Він допомагає визначити ключові переваги міста, сформувати зрозуміле повідомлення для різних аудиторій і об'єднати окремі проєкти та ініціативи в одну послідовну історію.
+                </p>
+
+                <p>
+                    Тому робота над брендом починається не з логотипу чи слогану.
+                    Спочатку потрібно зрозуміти саме місто: його сильні сторони, характер, потенціал, сприйняття мешканцями та можливі напрями розвитку.
+                </p>
+
+                <p>
+                    Зараз ми працюємо над соціальним дослідженням ідентичності Славутича.
+                    Це місто з унікальною історією, впізнаваною архітектурою та сильним людським потенціалом.
+                    <strong>Водночас важливим питанням стає те, яким Славутич хоче бути завтра і яке місце він прагне зайняти на мапі України та Європи.</strong>
+                </p>
+
+                <p>
+                    Через дослідження, опитування та партисипативні воркшопи ми вивчаємо, як місто сприймають його мешканці, які цінності вони з ним пов'язують, які місця формують його характер та які можливості можуть стати основою майбутнього позиціонування.
+                </p>
+
+                <p>
+                    Завдання бренду допомогти перетворити ці переваги на зрозумілу пропозицію: чому тут варто жити, працювати, створювати проєкти, інвестувати та будувати партнерства.
+                    Тому сильний бренд міста — це не просто приваблива айдентика, а спільне розуміння того, у чому унікальність міста, які його переваги, як воно хоче позиціонувати себе та чому люди, бізнес і партнери мають обрати саме його.
+                </p>
+
+            </div>
+
+            <div class="article-end">END OF ARTICLE</div>
+
+        </article>
+    </div>
+</main>
+
+<script>
+const translations = {
+    ua: {
+        overlay: "PERSPECTIVES / 03",
+        close: "BACK",
+        date: "СЕРПЕНЬ 2026",
+        read: "5 ХВ ЧИТАННЯ",
+        title: "БРЕНД МІСТА: НАВІЩО УКРАЇНСЬКИМ МІСТАМ ГОВОРИТИ ПРО СЕБЕ?"
+    },
+    en: {
+        overlay: "PERSPECTIVES / 03",
+        close: "BACK",
+        date: "AUGUST 2026",
+        read: "5 MIN READ",
+        title: "CITY BRANDING: WHY SHOULD UKRAINIAN CITIES TALK ABOUT THEMSELVES?"
+    }
+};
+
+document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang;
+        const t = translations[lang];
+
+        document.documentElement.lang = lang === "ua" ? "uk" : "en";
+        document.getElementById("overlay-title").textContent = t.overlay;
+        document.getElementById("close-text").textContent = t.close;
+        document.getElementById("date").textContent = t.date;
+        document.getElementById("read").textContent = t.read;
+        document.getElementById("title").textContent = t.title;
+
+        document.querySelectorAll(".lang-btn").forEach(b =>
+            b.classList.toggle("active", b === btn)
+        );
+
+        localStorage.setItem("language", lang);
+    });
+});
+
+const savedLanguage = localStorage.getItem("language") || "ua";
+document.querySelector(`.lang-btn[data-lang="${savedLanguage}"]`).click();
+
+const themeToggle = document.getElementById("theme-toggle");
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.setAttribute("data-theme", "dark");
+}
+
+themeToggle.addEventListener("click", () => {
+    const dark = document.body.getAttribute("data-theme") === "dark";
+
+    if (dark) {
+        document.body.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+    } else {
+        document.body.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+    }
+});
+
+/* Same cursor behavior as the portfolio */
+const cursor = document.getElementById("custom-cursor");
+const dot = document.getElementById("custom-cursor-dot");
+
+document.addEventListener("mousemove", e => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+    dot.style.left = e.clientX + "px";
+    dot.style.top = e.clientY + "px";
+});
+
+document.querySelectorAll("a, button").forEach(el => {
+    el.addEventListener("mouseenter", () => document.body.classList.add("clickable-hover"));
+    el.addEventListener("mouseleave", () => document.body.classList.remove("clickable-hover"));
+});
+</script>
+
+</body>
+</html>
